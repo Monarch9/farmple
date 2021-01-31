@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+@{
+    List<string> allTopTenCustomers = ViewData["toptencustomers"] as List<string>;
+    List<string> topTenOrders = ViewData["toptenorders"] as List<string>;
+
+    @Html.Partial("CustomerView", allTopTenCustomers)
+    <br/>
+    @Html.Partial("OrderView", topTenOrders)
+}

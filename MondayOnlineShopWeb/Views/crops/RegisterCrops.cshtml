@@ -1,0 +1,184 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "RegisterCrops";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            background-image: url(/Images/regcrop.jpg)
+        }
+    </style>
+
+
+</head>
+<header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 left-rs">
+                    <div class="navbar-header">
+                        <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                    </div>
+                    <form class="navbar-form navbar-left web-sh">
+                        <div class="form">
+                            <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+</header>
+<br /><br />
+<body style="background-image:url(/Images/regcrop.jpg)">
+    <div class="container">
+        <form method="post">
+            <div style="float:right;">
+                <p>
+                    <a href="/farmers/logout" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                    </a>
+                </p>
+            </div>
+
+            <table>
+
+                <tr>
+                    <td>
+                        <label>Select product</label>
+                    </td>
+                    <td>
+                        <select id="product" name="cid">
+                            @{
+                                List<crops> allProducts = this.ViewData["allProducts"] as List<crops>;
+                                foreach (crops product in allProducts)
+                                {
+
+                                    <option value="@product.cropID">@product.crop_name</option>
+                                }
+                            }
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <label>Quantity</label>
+                    </td>
+                    <td>
+                        <input type="text" id="qty" name="Quantity" placeholder="Quantity..">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Price</label>
+                    </td>
+                    <td>
+                        <input type="text" id="up" name="unit_price" placeholder="Price..">
+                    </td>
+                </tr>
+                @*   <tr>
+                        <td>
+                            <label>Category</label>
+                        </td>
+                        <td>
+                            <select id="Category" name="Category">
+                                <option value="fruits">fruits</option>
+                                <option value="vegis">vegis</option>
+                                <option value="meat">meat</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Description</label>
+                        </td>
+                        <td>
+                            <textarea id="Description" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+                        </td>
+                    </tr>*@
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+
+</html>

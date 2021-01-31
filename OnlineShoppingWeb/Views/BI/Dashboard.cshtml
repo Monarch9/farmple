@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<!--fetching data from viewdata of BI controlles-->
+
+@{
+    List<string> topTenCustomers = ViewData["topTenCustomers"] as List<string>;
+    List<string> topTenOrders = ViewData["topTenOrders"] as List<string>;
+
+
+
+    <!-- once data has been fetched ->using Html.partial method for sending the data to respective view  whose name we are given-->
+
+    @Html.Partial("CustomerView", topTenCustomers)   // fetched data from topTenCustomer is passed to "CustomerView of BI"
+    <br />
+    @Html.Partial("OrderView", topTenOrders)       // fetched data from topTenOrders is passed to "OrderView of BI"
+}

@@ -1,0 +1,23 @@
+﻿@using System.Data;
+
+@{
+    ViewBag.Title = "Chart";
+}
+
+
+<h2>Flowers Sales for year 2020</h2>
+@{                                                                                //we can read xml data in our app using dataset
+    var dataSet = new DataSet();                                                 //empty dataset
+    dataSet.ReadXmlSchema(Server.MapPath("~/App_Data/Data.xsd"));                //please read the schema
+    dataSet.ReadXml(Server.MapPath("~/App_Data/Data.xml"));                      //please  read xml 
+
+    var dataView = new DataView(dataSet.Tables[0]);                             //read first[0] xml files of data
+
+    var myChart = new Chart(width: 500, height: 400)                    //chart object created
+        .AddTitle("Saler Per Flower")                                   //title
+        .AddSeries("Default", chartType: "Pie",                        //define pie  chart or line chart etc
+            xValue: dataView, xField: "Name",                           
+            yValues: dataView, yFields: "Sales")
+        .Write();
+}
+

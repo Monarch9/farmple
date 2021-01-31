@@ -1,0 +1,15 @@
+﻿@using BOL
+
+@{
+    ViewBag.Title = "AboutUs";
+}
+
+<h2>AboutUs</h2>
+<hr />
+@{
+    Person thePerson = (Person)this.ViewData["director"];
+    <p>Created By :@thePerson.Owner</p>
+    <p>Company:@thePerson.Company</p>
+    <p>Email:@thePerson.Email</p>
+    <p>Contact Number: @thePerson.ContactNumber</p>
+}

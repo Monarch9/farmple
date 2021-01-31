@@ -1,0 +1,19 @@
+﻿@using BOL;
+
+@{ ViewBag.Title = "Update"; }
+
+<h2>Update</h2>
+
+<h2>Update Existing Product</h2>
+<hr />
+@{ Product theProduct = Model as Product;
+
+    <form method="post">
+        ID  <input type="text" name="id" value="@theProduct.ID" readonly />
+        Title<input type="text" name="title" value="@theProduct.Title" />
+        Description<input type="text" name="description" value="@theProduct.Descrip" />
+        Unit Price<input type="text" name="unitprice" value="@theProduct.UnitPrice" />
+        Quantity<input type="text" name="quantity" value="@theProduct.Quantity" />
+        Image Url<input type="text" name="imageurl" value="@theProduct.ImageUrl" />
+        <button type="submit">Update</button>
+    </form> }

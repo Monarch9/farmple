@@ -1,0 +1,16 @@
+﻿@using BOL
+ 
+
+<h2>Flowers available for Sale</h2>
+
+<hr />
+<ol>
+    @{
+
+        List<Product> flowers = null;
+        foreach (Product flower in flowers)
+        {
+            <li>@flower.Title</li>
+        }
+    }
+</ol>

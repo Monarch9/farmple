@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" standalone="yes" ?>
+<NewDataSet xmlns="http://tempuri.org/data.xsd">
+  <Employee>
+    <Name>Gerbera</Name>
+    <Sales>10440</Sales>
+  </Employee>
+  <Employee>
+    <Name>Rose</Name>
+    <Sales>17772</Sales>
+  </Employee>
+  <Employee>
+    <Name>Lilly</Name>
+    <Sales>23880</Sales>
+  </Employee>
+  <Employee>
+    <Name>Lotus</Name>
+    <Sales>7663</Sales>
+  </Employee>
+  <Employee>
+    <Name>Jasmin</Name>
+    <Sales>21773</Sales>
+  </Employee>
+  <Employee>
+    <Name>Marigold</Name>
+    <Sales>32294</Sales>
+  </Employee>
+</NewDataSet>

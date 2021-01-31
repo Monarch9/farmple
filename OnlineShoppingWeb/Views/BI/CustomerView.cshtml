@@ -1,0 +1,15 @@
+﻿<h2>Customers Details</h2>
+<p>TOP TEN CUSTOMERS OF FARMPLE</p>
+
+@{ 
+    List<string> names = Model;       //here model is automatically typecasted in cusomers
+    <ol>
+        @foreach (string name in names)
+        {
+            <li><b>@name</b></li>
+        }
+    </ol>
+}
+
+
+

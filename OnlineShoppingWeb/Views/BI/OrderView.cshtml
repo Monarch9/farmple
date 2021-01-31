@@ -1,0 +1,18 @@
+﻿
+<h2>Top Ten Orders Of Farmple</h2>
+
+
+@{
+
+    //BI is invoking directly business Queries
+        
+    List<string> names = Model;     //here model is automatically typecasted in orders
+    <ol>
+        @foreach (string name in names)
+        {
+            <li><b>@name</b></li>
+        }
+    </ol>
+}
+
+

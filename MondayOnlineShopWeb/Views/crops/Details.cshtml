@@ -1,0 +1,96 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "Details";
+}
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Farmple-E Market Yard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+    <div style="flex">
+        <h2 style="float:left">Product Details</h2>
+        <p style="float:right; margin-top:30px">
+            <a href="/farmers/logout" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+            </a>
+        </p>
+     @*   <a href="/ShoppingCart/index/"><img style="width:100px;height:100px; float:right" src="~/Images/shopping-cart.png" /></a>*@
+    </div>
+
+
+    <div style="flex">
+        <br /><br />
+
+        <hr />
+        <!-- This is web style comment -->
+        @{
+            /* this is standard comment */
+            // This is my comment
+            crops theProduct = Model as crops;
+            <div style="align-self ; background-color:azure; zoom:2">
+                <img src="@theProduct.image" width="100" height="100" />
+                <p> Id: @theProduct.cropID</p>
+                <p> Title: @theProduct.crop_name</p>
+                <p> Description: @theProduct.description</p>
+                <p> Unit Price: @theProduct.unit_price</p>
+                <p> Quantity: @theProduct.quantity</p>
+
+                <br />
+
+                <a href="/crops/update/@theProduct.cropID"> <button style="background-color:yellow"> Update</button></a>
+                <a href="/crops/delete/@theProduct.cropID"><button style="background-color:red"> Delete</button></a>
+            </div>
+        }
+    </div>
+</body>

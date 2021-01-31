@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="shortcut icon" href="~/Images/favicon.png" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="script.js"></script>
+
+    <style>
+
+        body {
+            font-family: "Nunito", sans-serif;
+        }
+
+        #nav a {
+            font-weight: 700;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="header" style="background-color: rgba(18, 223, 70, 0.88);">
+        <img src="~/Images/m3.png" style="float: right; margin-right: 100px;" />
+        @*        <a href="#"> <img src="~/Images/shopping-cart.png" style="float: right; margin-right: 50px; width: 50px; height: 50px;margin-top: 15px;" /></a>
+        *@        <br>
+        <h3 style="margin-left: 70px;">Welcome to . . .</h3>
+        <h1 style="margin-left: 150px; margin-bottom:5px">FARMPLE -The E-Market Yard</h1>
+     </div>
+
+
+        <br>
+
+        <div id="navibar">
+
+            <ul id="nav">
+                <li><a href="~/Farmers/RegFarmer">Login/Register As Farmer</a></li>
+                <li><a href="~/home/services">Services</a></li>
+                <li><a href="~/Accounts/Login">Login/Register As Customer</a></li>
+
+                <li><a href="/home/contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <br><br>
+
+
+
+        <div id="content">
+
+            <div id="cl" style="color: rgb(31, 238, 31); font-size:16px;">
+
+                <marquee behavior="scroll" direction="up" scrollamount="4" style="height: 350px;">
+                    <ul>
+                        <li>Fresh Vegitables</li>
+                        <br>
+                        <li>Fresh Fruits</li>
+                        <br>
+                        <li>Best Grains</li>
+                        <br>
+                        <li>Flowers</li>
+                        <br>
+                        <li>Eggs,Meat&Fish</li>
+                        <br>
+                    </ul>
+                </marquee>
+
+            </div>
+            <div id="cm">
+                <img id="ri" src="~/Images/m1.jpg" />
+
+            </div>
+            <div id="cr">
+
+                <marquee behavior="scroll" direction="down" scrollamount="4" style="        height: 350px;
+        color: rgb(31, 238, 31);
+        font-size: 16px;
+" >
+                    <ul>
+                        <li>For Farmers</li>
+                        <br>
+                        <li>For Working Womens</li>
+                        <br>
+                        <li>For Children</li>
+                        <br>
+                        <li>For AntiSocials</li>
+                        <br>
+                        <li>One Farmple For All</li>
+                        <br>
+                    </ul>
+                </marquee>
+                <!-- <p style="padding: 15px; color: white; margin: auto;">
+        Username:<br>
+        <input type="text" id="uname"/>
+        <br><br>
+        Password:<br>
+        <input type="password" id="pass"/>
+        <br><br>
+        <a href="#">Login</a>
+    </p>
+    <br><br>
+     <hr>
+    <p style="padding: 15px; color: white; margin: auto;">
+        New Member?
+        <br><br>
+        <a href="register.html">Register</a>
+    </p>
+    -->
+              @*  <P style="color: aqua;">api(weather) based suggestions here</P>*@
+
+            </div>
+
+
+        </div>
+        <br>
+
+        <div id="footer">
+            <br>
+            For more details about "FARMPLE The E-Market" - contact: +91-8888149159
+            <br>.
+        </div>
+
+</body>
+
+</html>

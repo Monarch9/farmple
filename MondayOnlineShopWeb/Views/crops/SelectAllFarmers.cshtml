@@ -1,0 +1,111 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "SelectAllFarmers";
+}
+
+
+
+@{
+
+    List<farmers> f = ViewData["allfarmers"] as List<farmers>;
+
+
+
+
+    <head>
+        <title>Farmple-E Market Yard</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--enable mobile device-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--fontawesome css-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <!--bootstrap css-->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!--animate css-->
+        <link rel="stylesheet" href="css/animate-wow.css">
+        <!--main css-->
+        <link rel="stylesheet" href="~/Content/css/style.css">
+        <link rel="stylesheet" href="css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="css/slick.min.css">
+        <!--responsive css-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <div class="right-nav">
+                            <div class="login-sr">
+                                <div class="login-signup" style="color: rgb(62, 114, 97);">
+                                    <ul>
+                                        <li><a href="/shoppingcart/index"><img style="width:50px; height:50px" src="~/Images/shopping-cart.png" /></a></li>
+                                        <li><a class="custom-b" href="/sh">Log Out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="help-r hidden-xs">
+                               <div class="help-box">
+                                  <ul>
+                                     <li> <a data-toggle="modal" data-target="#myModal" href="#"> <span>Change</span> <img src="images/flag.png" alt="" /> </a> </li>
+                                     <li> <a href="#"><img class="h-i" src="images/help-icon.png" alt="" /> Help </a> </li>
+                                  </ul>
+                               </div>
+                            </div> -->
+                            <div class="nav-b hidden-xs" style="color:rgb(62, 114, 97);">
+                                <div class="nav-box">
+                                    <ul>
+@*                                        <li><How it works</a></li>
+*@                                        <!--<li><a href="">Farmple for Business</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+    <br /><br /><br />
+    <h3>Select Your Favorite Farmer...</h3>
+    foreach (farmers i in f)
+    {
+        <div class="col-lg-2 col-sm-2 col-md-0" style="margin-top:20px; margin-bottom:20px">
+
+            <a href="/crops/DisplayAllCropsForCustomers/@i.farmerId">
+
+                <div class="box-img" style=" background-image: linear-gradient(to bottom right,white, neon);">
+
+                    <img src="https://www.jaivikkheti.in/_nuxt/img/4da6d90.png" alt="" />
+                    <div style="color:cornsilk">@i.FirstName </div>
+
+                </div>
+            </a>
+        </div>
+    }
+
+}

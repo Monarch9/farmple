@@ -1,0 +1,111 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "AddToCart";
+}
+<head>
+
+@*    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+*@    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+@*    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+*@    <title>Farmple-E Market Yard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+@*    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+*@    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <div class="right-nav">
+                            <div class="login-sr">
+                                <div class="login-signup" style="color: rgb(62, 114, 97);">
+                                    <ul>
+                                        <li><a href="/shoppingcart/index"><img style="width:50px; height:50px" src="~/Images/shopping-cart.png" /></a></li>
+                                        <li><a class="custom-b" href="/Accounts/login">Log Out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="help-r hidden-xs">
+                               <div class="help-box">
+                                  <ul>
+                                     <li> <a data-toggle="modal" data-target="#myModal" href="#"> <span>Change</span> <img src="images/flag.png" alt="" /> </a> </li>
+                                     <li> <a href="#"><img class="h-i" src="images/help-icon.png" alt="" /> Help </a> </li>
+                                  </ul>
+                               </div>
+                            </div> -->
+                            <div class="nav-b hidden-xs" style="color:rgb(62, 114, 97);">
+                                <div class="nav-box">
+                                    <ul>
+                                        @*                                        <li><How it works</a></li>
+                                        *@                                        <!--<li><a href="">Farmple for Business</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+
+</head>
+<br /><br />
+
+<h5>Add to Cart</h5>
+@{
+    crops theProductInterested = (crops)Model;
+    <p> crop ID =@theProductInterested.cropID</p>
+    <hr />
+    <form method="post" style="zoom:2;">
+        <input type="hidden" name="image" value="@theProductInterested.image" />
+        <input type="hidden" name="cropID" value="@theProductInterested.cropID" />
+        <img style="height:100px ;width:100px" src="@theProductInterested.image" /><br />
+        <input type="hidden" name="crop_name" value="@theProductInterested.crop_name" readonly/><br />
+
+        @*        <p style="font-family:Arial, Helvetica, sans-serif; font-size:large; color:darkslategray">  @theProductInterested.crop_name</p><br />
+        *@        Enter Quantity-:<input type="text" name="quantity" placeholder="Enter quantity" required /><br /><br />
+        Price-:<input type="text" name="unit_price" value=" @theProductInterested.unit_price" readonly />
+        <br />
+        @* <p style="font-family:Arial, Helvetica, sans-serif; font-size:large">
+            Price -: @theProductInterested.unit_price
+        </p><br />*@
+
+        <button type="submit">Add To Cart</button>
+    </form>
+}
+

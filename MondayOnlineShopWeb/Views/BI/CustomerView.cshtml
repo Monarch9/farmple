@@ -1,0 +1,13 @@
+﻿
+<h2> Customers Details</h2>
+<p>Top Tech Customers of Transflower</p>
+
+@{ 
+    List<string> names = Model;
+    <ol>
+        @foreach(string name in names)
+        {
+            <li><b>@name</b></li>
+        }
+    </ol>
+}

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "TopTen";
+}
+
+<h2>Top Ten Customers</h2>
+
+@{
+    var grid = new WebGrid(source: Model,rowsPerPage:4);
+}
+
+@grid.GetHtml()

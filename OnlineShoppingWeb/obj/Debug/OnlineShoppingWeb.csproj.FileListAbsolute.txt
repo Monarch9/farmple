@@ -1,0 +1,2 @@
+D:\TAP\IACSDSolution\OnlineShoppingWeb\obj\Debug\OnlineShoppingWeb.csprojAssemblyReference.cache
+D:\TAP\IACSDSolution\OnlineShoppingWeb\obj\Debug\OnlineShoppingWeb.csproj.CoreCompileInputs.cache

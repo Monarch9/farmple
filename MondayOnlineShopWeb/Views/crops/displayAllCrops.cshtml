@@ -1,0 +1,144 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "displayAllCrops";
+}
+
+<html>
+<head>
+    <title>Farmple-E Market Yard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+@*    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+*@    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   @* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">*@ <!--header issue-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <title>Products</title>
+    <style>
+        body {
+            font-family: "Nunito", sans-serif;
+        }
+
+        .box-img {
+            background: #051d36;
+            text-align: center;
+            padding-bottom: 30px;
+            min-height: 280px;
+            margin-bottom: 30px;
+            position: relative;
+            border-bottom: solid #007dea 3px;
+            transition: ease all 0.5s;
+        }
+
+            .box-img h4 {
+                color: #fff;
+                padding-top: 35px;
+                padding-bottom: 30px;
+                font-size: 25px;
+                font-weight: 500;
+                transition: all 0.3s ease 0s;
+                letter-spacing: 0px;
+            }
+
+            .box-img:hover {
+                cursor: grab;
+                transform: scale(1.1);
+                background: #92f37f;
+            }
+    </style>
+</head>
+
+<body style="color:aquamarine">
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+    <br /><br /><br />
+    <h5>displayAllCrops</h5>
+
+    <div style="float:right;">
+        <p>
+            <a href="/farmers/logout" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+            </a>
+        </p>
+    </div>
+
+
+
+    <h5> All Crops available Inventory </h5>
+
+    <a href="/crops/RegisterCrops">
+        <button type="button" class="btn btn-success">Add New Product </button>
+    </a>
+    <hr />
+
+    <ol>
+        @{
+            List<crops> allProducts = this.ViewData["allProducts"] as List<crops>;
+
+            foreach (crops product in allProducts)
+            {
+                @*            <li><a href="/products/details/@product.ID"> @product.Title</a> | <a href="/products/update/@product.ID"> update</a>|<a href="/products/delete/@product.ID">delete</a> </li>
+                *@
+                <div class="col-lg-2 col-sm-2 col-md-0">
+                    <div style="color:navy; align-content:center; font-size:medium"><b>@product.crop_name.ToUpper()</b></div>
+                    <a href="/crops/details/@product.cropID">
+
+                        <div class="box-img">
+
+                            <img src="@product.image" alt="" />
+
+                        </div>
+
+                    </a>
+                </div>
+
+            }
+        }
+    </ol>
+</body>
+</html>

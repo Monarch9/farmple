@@ -1,0 +1,16 @@
+﻿
+
+<h2> Top Tech 10 Orders of Transflower</h2>
+
+@{
+
+    // BI is invoking directly business Queries
+    List<string> names = Model;
+    <ol>
+        @foreach (string name in names)
+        {
+            <li> <u>@name</u></li>
+        }
+    </ol>
+
+}

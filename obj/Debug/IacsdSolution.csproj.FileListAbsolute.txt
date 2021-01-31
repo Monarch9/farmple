@@ -1,0 +1,7 @@
+E:\DOTNET\IacsdSolution\bin\Debug\IacsdSolution.exe.config
+E:\DOTNET\IacsdSolution\bin\Debug\IacsdSolution.exe
+E:\DOTNET\IacsdSolution\bin\Debug\IacsdSolution.pdb
+E:\DOTNET\IacsdSolution\obj\Debug\IacsdSolution.csprojAssemblyReference.cache
+E:\DOTNET\IacsdSolution\obj\Debug\IacsdSolution.csproj.CoreCompileInputs.cache
+E:\DOTNET\IacsdSolution\obj\Debug\IacsdSolution.exe
+E:\DOTNET\IacsdSolution\obj\Debug\IacsdSolution.pdb

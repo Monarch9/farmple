@@ -1,0 +1,30 @@
+﻿
+@using BOL;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>All Fruits Available In Inventory</h2>
+
+<hr />
+
+    <a href="/products/insert">Insert new Crops</a>
+
+<ol>
+    @{
+        List<Product> allproduct =this.ViewData["allproducts"] as List<Product>;  //type casted dictonary
+        foreach (Product fruit in allproduct)
+        {
+        <li>
+
+            <a href="/products/details/@fruit.ID"> @fruit.Title </a> | <a href="/products/update/@fruit.ID">Update</a> |  <a href="/products/delete/@fruit.ID">delete</a>
+        </li>
+
+          
+               
+          
+        }
+
+    }
+</ol>

@@ -1,0 +1,135 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "FarmerIndex";
+}
+
+
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+            .button1:hover {
+                background-color: greenyellow;
+                color: white;
+            }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid ;
+            border-color:forestgreen
+        }
+
+            .button2:hover {
+                background-color: greenyellow;
+                color: white;
+                border-color: forestgreen
+            }
+
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid;
+            border-color: forestgreen
+        }
+
+            .button3:hover {
+                background-color: greenyellow;
+                color: white;
+                border-color: forestgreen
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="index.html" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+    <h2>FarmerIndex</h2>
+
+    <div class="container">
+        <div style="float:right;">
+            <p>
+                <a href="/farmers/logout" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                </a>
+            </p>
+        </div><br />
+        <h3>
+            Welcome Farmer
+        </h3>
+
+        <a href="/crops/RegisterCrops/@ViewBag.id">
+            <button class="button button1" type="button">Add new Product<a></button></br></br>
+            @* <button class="button button2" type="button">Delete Products</button></br></br>*@
+            <a href="/crops/displayAllCrops/@ViewBag.id"><button class="button button3" type="button">view Products</button></a></br></br></br>
+            <a href="/shoppingcart/displayAllorders/@ViewBag.id"><button class="button button3" type="button">view Orders received</button></a></br></br></br>
+
+    </div>
+</body>

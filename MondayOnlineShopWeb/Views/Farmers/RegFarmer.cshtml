@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "RegFarmer";
+}
+
+
+<html>
+<head>
+    <title>Join Us </title>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .hero {
+            height: 100%;
+            width: 100%;
+            background-image: url('p.JPG');
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+
+        .form-box1 {
+            width: 380px;
+            height: 800px;
+            position: relative;
+            margin: 6% auto;
+            background: white;
+            padding: 5px;
+            overflow: hidden;
+            background-image: url(../../Images/plant.jpg);
+        }
+
+        .button-box {
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: linear-gradient(to right, #cac706, #44f36a);
+            border-radius: 30px;
+            transition: .5s;
+        }
+
+
+        .input-group {
+            top: 180px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+            height: 250%;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+
+
+        .submit-btn {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: linear-gradient(to right,#cac706, #44f36a);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+
+        .check-box {
+            margin: 30px 10px 30px 0;
+        }
+
+
+        span {
+            color: #777;
+            font-size: 12px;
+            bottom: 68px;
+            position: absolute;
+        }
+
+
+
+        #login {
+            left: 50px;
+        }
+
+        #register {
+            left: 450px;
+        }
+    </style>
+
+</head>
+<body background="images/vegis.jpg">
+    <header id="header" class="top-head" style="background-color: rgb(180, 253, 166); color: rgb(62, 114, 97);">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 left-rs">
+                        <div class="navbar-header">
+                            <button type="button" id="top-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="/home/index" class="navbar-brand"><img src="https://www.jaivikkheti.in/_nuxt/img/5056f7e.png" alt="" /></a>
+                        </div>
+                        <form class="navbar-form navbar-left web-sh">
+                            <div class="form">
+                                <h3 style="color: rgb(62, 114, 97);"> Farmple The E-Market Yard</h3>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+    </header>
+    <br>
+    <br>
+    <img>
+    <div class="hero">
+        <div class="form-box1">
+@*            <center style="font:200;color:aquamarine">User Login</center>
+*@            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+
+            <form id="login" class="input-group" method="post" action="/farmers/loginfarmer">
+                <input type="text" class="input-field" placeholder="username" name="username" required>
+                <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
+                <br><br>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+
+            <form id="register" class="input-group" action="/farmers/RegFarmer" method="post">
+                <input type="text" class="input-field" placeholder="First Name" required name="firstname">
+                <input type="text" class="input-field" placeholder="Last Name" required name="lastname">
+                <input type="email" class="input-field" placeholder="email Id" required name="email">
+                <input type="password" class="input-field" placeholder="enter password" required name="password">
+                <input type="password" class="input-field" placeholder="confirm password" required name="cpassword">
+                <input type="text" class="input-field" placeholder="Contact" name="contact">
+                <input type="text" class="input-field" placeholder="Address" name="address">
+
+
+                <button type="submit" class="submit-btn">Register</button>
+
+
+
+            </form>
+
+
+
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
+</body>
+</html>
+
+
+@*<a href="/accounts/register">Register</a>*@

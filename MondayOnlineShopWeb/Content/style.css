@@ -1,0 +1,107 @@
+body {
+    width: 1024px;
+    margin: auto;
+    font-family: Arial;
+}
+
+div#header {
+    display: center;
+    justify-content: space-evenly;
+    background-color: rgb(142, 231, 146);
+    height: 120px;
+}
+
+div#footer {
+    background-color: rgb(142, 231, 146);
+    text-align: center;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    width: 1024px;
+}
+
+    #nav li {
+        display: inline;
+        width: 204.8px;
+    }
+
+        #nav li a {
+            text-align: center;
+            width: 184.5px;
+            font-size: 12px;
+            text-decoration: none;
+            float: left;
+            padding: 10px;
+            background-color: #4de054;
+            color: #000000;
+            border-bottom: 3px;
+            border-bottom-color: #d88f3b;
+            border-bottom-style: solid;
+        }
+
+            #nav li a:hover {
+                background-color: orange;
+                padding-bottom: 12px;
+                border-bottom: 2px;
+                /*  border-bottom-color:#4de054;
+ border-bottom-style:solid; */
+                transform: scale(1.25);
+                opacity: 0.9;
+                margin: -1px;
+            }
+
+div#content {
+    height: 350px;
+    width: 1024px;
+    background-color: rgb(230, 153, 65);
+}
+
+div#cl {
+    position: absolute;
+    height: 350px;
+    background-color: rgb(7, 32, 2);
+    width: 256px;
+}
+
+div#cm {
+    position: absolute;
+    margin-left: 256px;
+    height: 350px;
+    background-color: #4de054;
+    width: 512px;
+    background-image: url("images/m1.jpg");
+}
+
+div#cr {
+    float: right;
+    height: 350px;
+    background-color: rgb(7, 32, 2);
+    width: 256px;
+}
+
+#cr a {
+    text-align: center;
+    width: 184.5px;
+    font-size: 16px;
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    border-bottom: 1px;
+    border-bottom-color: #000000;
+    border-bottom-style: solid;
+}
+
+    #cr a:hover {
+        font-size: 18px;
+        background-color: #9B1C26;
+        padding-bottom: 12px;
+        border-bottom: 2px;
+        border-bottom-color: #000000;
+        border-bottom-style: solid;
+        margin: -1px;
+    }

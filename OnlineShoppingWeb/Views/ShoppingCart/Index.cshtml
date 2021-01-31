@@ -1,0 +1,12 @@
+﻿@using BOL
+@using BLL
+@{ ViewBag.Title = "Index"; }
+
+<h2>My Shopping Cart</h2>
+<hr />
+@{ Cart myCart = (Cart)Model;
+                foreach (Item theItem in myCart.items)
+                {
+                    Product theProduct = BusinessManager.GetProduct(theItem.ProductID);
+    <img src="@theProduct.ImageUrl" width="100" height="100" />
+                    <p> @theProduct.Title      : @theItem.Quantity  <a href="">update</a> | <a href="">remove</a></p> } }

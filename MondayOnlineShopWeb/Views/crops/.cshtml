@@ -1,0 +1,114 @@
+﻿@using BOL
+@{
+    ViewBag.Title = "displayAllCropsforcustomer";
+}
+
+<h2>displayAllCropsforcustomer</h2>
+
+
+<html>
+<head>
+    <title>Farmple-E Market Yard</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--enable mobile device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fontawesome css-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="css/animate-wow.css">
+    <!--main css-->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/slick.min.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Products</title>
+    <style>
+        body {
+            font-family: "Nunito", sans-serif;
+        }
+
+        .box-img {
+            background: #051d36;
+            text-align: center;
+            padding-bottom: 30px;
+            min-height: 280px;
+            margin-bottom: 30px;
+            position: relative;
+            border-bottom: solid #007dea 3px;
+            transition: ease all 0.5s;
+        }
+
+            .box-img h4 {
+                color: #fff;
+                padding-top: 35px;
+                padding-bottom: 30px;
+                font-size: 25px;
+                font-weight: 500;
+                transition: all 0.3s ease 0s;
+                letter-spacing: 0px;
+            }
+
+            .box-img:hover {
+                cursor: grab;
+                transform: scale(1.1);
+                background: #92f37f;
+            }
+    </style>
+</head>
+
+<body style="color:aquamarine; width:100%">
+    <div style=" flex:auto">
+        <p style="float:left">
+            <a href="/accounts/logout" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+            </a>
+        </p>
+        <a href="/ShoppingCart/index/"><img style="width:100px;height:100px;      margin-right:400px  ;   float:right;" src="~/Images/shopping-cart.png" /></a>
+
+    </div>
+    <h5>displayAllCrops</h5>
+
+   
+
+
+    <h5> All Crops available for Sale</h5>
+    <hr /> <hr />
+    <div>
+
+
+        @*    <a href="/crops/RegisterCrops "> Insert New Product</a>
+        *@    <ol>
+    @{
+        List<crops> allProducts = this.ViewData["allProducts"] as List<crops>;
+
+        foreach (crops product in allProducts)
+        {
+            @*            <li><a href="/products/details/@product.ID"> @product.Title</a> | <a href="/products/update/@product.ID"> update</a>|<a hre
+                <a href="~/Views/crops/displayAllCropsforcustomer.cshtml">~/Views/crops/displayAllCropsforcustomer.cshtml</a>f="/products/delete/@product.ID">delete</a> </li>
+            *@
+            <div class="col-lg-2 col-sm-2 col-md-0" style="margin-top:20px; margin-bottom:20px">
+                <a href="/crops/detailsforCustomers/@product.cropID">
+
+                    <div class="box-img">
+
+                        <img src="@product.image" alt="" />
+                        <div style="color:cornsilk">@product.crop_name</div>
+                    </div>
+                </a>
+            </div>
+
+        }
+    }
+</ol>
+    </div>
+</body>
+</html>
