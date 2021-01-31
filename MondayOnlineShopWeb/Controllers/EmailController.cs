@@ -21,8 +21,8 @@ namespace MondayOnlineShopWeb.Controllers
         {
             var message = new MailMessage();
             message.To.Add(new MailAddress(objData["toname"].ToString() + " <" + objData["toemail"].ToString() + ">"));
-            message.From = new MailAddress("Amit Mohanty <amitmohanty@email.com>");
-            message.Bcc.Add(new MailAddress("Amit Mohanty <amitmohanty@email.com>"));
+            message.From = new MailAddress("farmple <farmpletheemy@email.com>");
+            message.Bcc.Add(new MailAddress("farmple <farmpletheemy@email.com>"));
             message.Subject = objData["subject"].ToString();
             message.Body = createEmailBody(objData["toname"].ToString(), objData["message"].ToString());
             message.IsBodyHtml = true;

@@ -16,12 +16,6 @@ namespace MondayOnlineShopWeb.Controllers
             return View();
         }
 
-      /*  public ActionResult TopThreeCrops()
-        {
-            this.ViewData["topthreecrops"] = BusinessManager.GetTopthreecrops();
-           *//* this.ViewData["topcustomers"] = BusinessManager.GetTopTenCustomers();*//*
-
-            return View();
-        }*/
+     
     }
 }
